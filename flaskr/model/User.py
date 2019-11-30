@@ -5,7 +5,6 @@ from sqlalchemy.orm import validates
 from .Base import BaseModel
 
 
-
 user_role = db.Table('user_role',
                      db.Column('user_id', db.String, db.ForeignKey('user.id')),
                      db.Column('role_id', db.String, db.ForeignKey('role.id'))
@@ -37,6 +36,7 @@ class User(db.Model, BaseModel):
     score = db.Column("score", db.Integer, comment="积分")
     userNo = db.Column("user_no", db.Integer, autoincrement=True, comment="编号")
     roles = db.relationship('Role', secondary=user_role, backref="users")
+
 
     @validates('gender')
     def validate_gender(self, k, v):

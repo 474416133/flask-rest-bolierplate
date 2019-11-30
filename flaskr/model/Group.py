@@ -14,6 +14,8 @@ class Group(db.Model, BaseModel):
     # menbers = db.relationship('UserGroup')
     # menbers = db.relationship('User', secondary="user_group" )
 
+
+
 class GroupSchema(ma.ModelSchema):
     """ 组模式
     """
