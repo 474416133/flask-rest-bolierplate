@@ -16,8 +16,9 @@ class UserGroup(db.Model, BaseModel):
     level = db.Column("level", db.SmallInteger, default=0, comment="级别")
     joinTime = db.Column("join_time", db.DateTime, comment="加入时间")
 
-    users = db.relationship('User', backref="groups")
-    groups = db.relationship('Group', backref="users")
+    # users = db.relationship('User', backref="groups")
+    # groups = db.relationship('Group', backref="users")
+
 
 class UserGroupSchema(ma.ModelSchema):
     """ 用户组模式

@@ -37,6 +37,7 @@ class User(db.Model, BaseModel):
     userNo = db.Column("user_no", db.Integer, autoincrement=True, comment="编号")
     roles = db.relationship('Role', secondary=user_role, backref="users")
 
+    #groups = db.relationship('Group', secondary="user_group")
 
     @validates('gender')
     def validate_gender(self, k, v):
